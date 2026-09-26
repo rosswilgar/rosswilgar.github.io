@@ -1,4 +1,6 @@
-/* ---------- BASIC SETUP ---------- */
+/* =========================================
+   ROSS WILGAR — PORTFOLIO
+   ========================================= */
 
 * {
     margin: 0;
@@ -10,162 +12,384 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --background: #f4f5f2;
+    --text: #172326;
+    --muted: #687477;
+    --accent: #087f8c;
+    --line: #ccd3d2;
+    --white: #ffffff;
+}
+
 body {
+    background: var(--background);
+    color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
-    background: #f8f9fa;
-    color: #1d1d1f;
     line-height: 1.6;
 }
 
+a {
+    color: inherit;
+}
 
-/* ---------- HEADER ---------- */
+
+/* =========================================
+   HEADER
+   ========================================= */
 
 header {
-    max-width: 1100px;
-    margin: auto;
-    padding: 30px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 40px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    border-bottom: 1px solid var(--line);
 }
 
-header h1 {
-    font-size: 22px;
+.logo {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--text);
+    color: white;
+
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 nav {
     display: flex;
-    gap: 30px;
+    gap: 35px;
 }
 
 nav a {
-    color: #1d1d1f;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 nav a:hover {
-    color: #666;
+    color: var(--accent);
 }
 
 
-/* ---------- MAIN CONTENT ---------- */
+/* =========================================
+   MAIN LAYOUT
+   ========================================= */
 
 main {
-    max-width: 1100px;
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 40px;
 }
 
 section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 
-/* ---------- INTRODUCTION ---------- */
+/* =========================================
+   HERO / INTRODUCTION
+   ========================================= */
 
-#about {
-    min-height: 65vh;
+.hero {
+    min-height: 75vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    max-width: 750px;
+    max-width: 1000px;
 }
 
-#about h2 {
-    font-size: 60px;
-    line-height: 1.1;
-    margin-bottom: 25px;
+.eyebrow {
+    color: var(--accent);
+
+    font-size: 13px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
 }
 
-#about p {
-    font-size: 20px;
-    color: #555;
+.hero h1 {
+    font-size: clamp(55px, 8vw, 105px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+
+    max-width: 950px;
+
+    margin-bottom: 40px;
 }
 
+.hero-description {
+    max-width: 650px;
 
-/* ---------- PROJECTS ---------- */
+    font-size: 19px;
+    color: var(--muted);
 
-#projects h2,
-#skills h2,
-#contact h2 {
-    font-size: 32px;
     margin-bottom: 35px;
 }
 
-#projects {
-    border-top: 1px solid #ddd;
-}
+.text-link {
+    display: inline-block;
 
-#projects article {
-    background: white;
-    padding: 30px;
-    margin-bottom: 20px;
+    width: fit-content;
 
-    border: 1px solid #e5e5e5;
-    border-radius: 10px;
-
-    transition: transform 0.2s ease;
-}
-
-#projects article:hover {
-    transform: translateY(-4px);
-}
-
-#projects article h3 {
-    font-size: 23px;
-    margin-bottom: 10px;
-}
-
-#projects article p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-#projects article a {
-    color: #1d1d1f;
-    font-weight: bold;
+    color: var(--text);
     text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    border-bottom: 2px solid var(--accent);
+
+    padding-bottom: 5px;
+}
+
+.text-link:hover {
+    color: var(--accent);
 }
 
 
-/* ---------- SKILLS ---------- */
+/* =========================================
+   SECTION HEADINGS
+   ========================================= */
 
-#skills {
-    border-top: 1px solid #ddd;
+.section-heading {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+
+    align-items: baseline;
+
+    border-top: 1px solid var(--line);
+
+    padding-top: 25px;
+    margin-bottom: 70px;
 }
 
-#skills p {
+.section-heading p {
+    color: var(--accent);
+
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================
+   PROJECTS
+   ========================================= */
+
+.project {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+
+    gap: 50px;
+
+    padding: 55px 0;
+
+    border-top: 1px solid var(--line);
+}
+
+.project:last-child {
+    border-bottom: 1px solid var(--line);
+}
+
+.project-number {
+    color: var(--accent);
+
+    font-family: monospace;
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.project-content {
+    max-width: 750px;
+}
+
+.project-content h3 {
+    font-size: 42px;
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 20px;
+}
+
+.project-content > p {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   PROJECT TAGS
+   ========================================= */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 30px;
+}
+
+.tags span {
+    border: 1px solid var(--line);
+
+    padding: 6px 11px;
+
+    font-family: monospace;
+    font-size: 11px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================
+   SKILLS
+   ========================================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 70px;
+}
+
+.skills-grid h3 {
+    color: var(--accent);
+
+    font-family: monospace;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.skills-grid p {
     font-size: 18px;
-    color: #555;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid var(--line);
 }
 
 
-/* ---------- CONTACT ---------- */
+/* =========================================
+   CONTACT
+   ========================================= */
 
 #contact {
-    border-top: 1px solid #ddd;
+    min-height: 70vh;
+}
+
+.contact-heading {
+    font-size: clamp(50px, 7vw, 90px);
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 20px;
+}
+
+#contact > p {
+    color: var(--muted);
+
+    font-size: 18px;
+
+    max-width: 600px;
+
+    margin-bottom: 45px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 30px;
+}
+
+.contact-links a {
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-bottom: 2px solid var(--accent);
+
+    padding-bottom: 4px;
+}
+
+.contact-links a:hover {
+    color: var(--accent);
 }
 
 
-/* ---------- FOOTER ---------- */
+/* =========================================
+   FOOTER
+   ========================================= */
 
 footer {
-    max-width: 1100px;
-    margin: auto;
+    max-width: 1200px;
 
-    padding: 40px;
-    border-top: 1px solid #ddd;
+    margin: 0 auto;
 
-    color: #777;
-    font-size: 14px;
+    padding: 30px 40px;
+
+    border-top: 1px solid var(--line);
+
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 
-/* ---------- MOBILE ---------- */
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 700px) {
 
@@ -177,16 +401,48 @@ footer {
         gap: 15px;
     }
 
+    nav a {
+        font-size: 12px;
+    }
+
     main {
         padding: 0 20px;
     }
 
-    #about h2 {
-        font-size: 42px;
+    section {
+        padding: 70px 0;
     }
 
-    #about p {
-        font-size: 18px;
+    .hero {
+        min-height: 70vh;
     }
 
+    .hero h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    .section-heading {
+        grid-template-columns: 45px 1fr;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .project-content h3 {
+        font-size: 34px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    footer {
+        padding: 25px 20px;
+    }
 }
