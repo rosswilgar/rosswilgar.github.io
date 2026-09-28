@@ -446,3 +446,251 @@ footer {
         padding: 25px 20px;
     }
 }
+/* =========================================
+   CASE STUDY PAGES
+   ========================================= */
+
+
+/* ---------- CASE STUDY HERO ---------- */
+
+.case-hero {
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 1050px;
+}
+
+.case-hero h1 {
+    font-size: clamp(48px, 7vw, 90px);
+    line-height: 1;
+    letter-spacing: -3px;
+
+    max-width: 1000px;
+
+    margin-bottom: 35px;
+}
+
+.case-intro {
+    max-width: 700px;
+
+    font-size: 20px;
+    color: var(--muted);
+
+    margin-bottom: 30px;
+}
+
+
+/* ---------- GENERAL CASE STUDY SECTIONS ---------- */
+
+.case-section {
+    padding: 90px 0;
+}
+
+.case-text {
+    max-width: 800px;
+    margin-left: 80px;
+}
+
+.case-text h3 {
+    font-size: 34px;
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -1px;
+
+    margin-bottom: 30px;
+}
+
+.case-text p {
+    max-width: 680px;
+
+    color: var(--muted);
+    font-size: 17px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ---------- MODEL / METHODOLOGY GRID ---------- */
+
+.case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 80px;
+
+    margin-left: 80px;
+}
+
+.case-grid > div {
+    border-top: 1px solid var(--line);
+
+    padding-top: 25px;
+}
+
+.case-grid h3 {
+    font-size: 27px;
+    font-weight: 500;
+
+    margin-bottom: 20px;
+}
+
+.case-grid p:not(.eyebrow) {
+    color: var(--muted);
+
+    margin-bottom: 15px;
+}
+
+
+/* ---------- BOUNDARY CONDITIONS ---------- */
+
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-left: 80px;
+}
+
+.conditions-grid > div {
+    min-height: 260px;
+
+    border: 1px solid var(--line);
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.conditions-grid h3 {
+    font-size: 30px;
+    font-weight: 500;
+
+    margin-bottom: 20px;
+}
+
+.conditions-grid p:last-child {
+    color: var(--muted);
+
+    margin-top: auto;
+}
+
+
+/* ---------- RESULTS ---------- */
+
+.result {
+    max-width: 900px;
+
+    margin-left: 80px;
+    padding: 60px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.result:first-of-type {
+    padding-top: 0;
+}
+
+.result h3 {
+    max-width: 750px;
+
+    font-size: 38px;
+    font-weight: 500;
+
+    line-height: 1.15;
+    letter-spacing: -1px;
+
+    margin-bottom: 20px;
+}
+
+.result > p:not(.eyebrow) {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+
+/* ---------- KEY FINDING ---------- */
+
+.key-finding {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    margin-top: 40px;
+}
+
+.key-finding h2 {
+    max-width: 950px;
+
+    font-size: clamp(35px, 5vw, 65px);
+
+    font-weight: 500;
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+}
+
+
+/* ---------- BOTTOM PROJECT LINKS ---------- */
+
+.case-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 60px 0 100px;
+}
+
+
+/* =========================================
+   CASE STUDY MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .case-hero {
+        min-height: 65vh;
+    }
+
+    .case-hero h1 {
+        font-size: 46px;
+        letter-spacing: -2px;
+    }
+
+    .case-text,
+    .case-grid,
+    .conditions-grid,
+    .result {
+        margin-left: 0;
+    }
+
+    .case-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .conditions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .conditions-grid > div {
+        min-height: 220px;
+    }
+
+    .result h3 {
+        font-size: 31px;
+    }
+
+    .case-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+}
