@@ -1,76 +1,300 @@
-01 / COMPUTATIONAL MODELLING
+<!DOCTYPE html>
+<html lang="en">
 
-Computational Fluid Dynamics of an
-Abdominal Aortic Aneurysm
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-ANSYS FLUENT  •  CFD  •  HAEMODYNAMICS  •  UDF
+    <title>AAA Computational Fluid Dynamics | Ross Wilgar</title>
 
-──────────────────────────────────────────────
+    <!-- ../ means go up from the projects folder to find style.css -->
+    <link rel="stylesheet" href="../style.css">
+</head>
 
-OVERVIEW
 
-How do different inlet boundary conditions affect
-haemodynamics within an abdominal aortic aneurysm?
+<body>
 
-This project used CFD to investigate blood flow through
-an idealised AAA under steady and pulsatile conditions.
+    <!-- HEADER -->
+    <header>
+        <a class="logo" href="../index.html">RW</a>
 
-             [YOUR ANSYS AAA IMAGE]
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="../index.html#skills">Skills</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+    </header>
 
-──────────────────────────────────────────────
 
-THE APPROACH
+    <main>
 
-01  GEOMETRY & MESH
+        <!-- PROJECT INTRODUCTION -->
+        <section class="case-hero">
 
-Idealised AAA
-~166,000 hexahedral cells
-20 mm inlet/outlet
-~60 mm maximum aneurysm diameter
+            <p class="eyebrow">
+                01 / Computational Modelling
+            </p>
 
-                  [mesh / geometry image]
+            <h1>
+                Computational Fluid Dynamics of an
+                Abdominal Aortic Aneurysm
+            </h1>
 
-02  BOUNDARY CONDITIONS
+            <p class="case-intro">
+                A computational investigation of haemodynamic behaviour
+                within an idealised abdominal aortic aneurysm using
+                ANSYS Fluent.
+            </p>
 
-Uniform             Parabolic           Pulsatile
-inlet               inlet               inlet
-                    ↓                   ↓
-                    UDF                 Fourier UDF
+            <div class="tags">
+                <span>ANSYS Fluent</span>
+                <span>CFD</span>
+                <span>Haemodynamics</span>
+                <span>UDF</span>
+            </div>
 
-03  ANALYSIS
+        </section>
 
-Velocity fields
-Recirculation
-Wall shear stress
-Transient vortex behaviour
 
-──────────────────────────────────────────────
+        <!-- OVERVIEW -->
+        <section class="case-section">
 
-RESULTS
+            <div class="section-heading">
+                <p>01</p>
+                <h2>Overview</h2>
+            </div>
 
-        [velocity contour]
+            <div class="case-text">
 
-High-velocity central jet with low-velocity
-recirculation within the aneurysm sac.
+                <h3>
+                    How do different inlet boundary conditions affect
+                    haemodynamics within an abdominal aortic aneurysm?
+                </h3>
 
-        [vector field]
+                <p>
+                    This project used Computational Fluid Dynamics to
+                    investigate blood flow through an idealised abdominal
+                    aortic aneurysm under steady and pulsatile inlet
+                    conditions.
+                </p>
 
-Transient flow produced evolving vortical
-structures throughout the cardiac cycle.
+                <p>
+                    The simulations were used to examine velocity fields,
+                    recirculation regions, vortex formation and wall shear
+                    stress within the aneurysm.
+                </p>
 
-        [wall shear stress contour]
+            </div>
 
-Low and reversed wall shear stress occurred
-within regions of aneurysmal recirculation.
+        </section>
 
-──────────────────────────────────────────────
 
-KEY FINDING
+        <!-- APPROACH -->
+        <section class="case-section">
 
-The transient periodic simulation provided the most
-physiologically representative model of the three
-inlet conditions investigated.
+            <div class="section-heading">
+                <p>02</p>
+                <h2>Engineering Approach</h2>
+            </div>
 
-──────────────────────────────────────────────
 
-← ALL PROJECTS                     VIEW REPORT ↗
+            <div class="case-grid">
+
+                <div>
+                    <p class="eyebrow">Geometry & Mesh</p>
+
+                    <h3>Idealised AAA Model</h3>
+
+                    <p>
+                        Approximately 166,000 predominantly structured
+                        hexahedral cells were used to represent the
+                        aneurysm geometry.
+                    </p>
+
+                    <p>
+                        The vessel had a 20 mm inlet and outlet diameter,
+                        expanding to approximately 60 mm within the
+                        aneurysm.
+                    </p>
+                </div>
+
+
+                <div>
+                    <p class="eyebrow">Fluid Model</p>
+
+                    <h3>Blood Flow</h3>
+
+                    <p>
+                        Blood was modelled as an incompressible Newtonian
+                        fluid under laminar flow conditions.
+                    </p>
+
+                    <p>
+                        Density: 1050 kg/m³<br>
+                        Dynamic viscosity: 0.0035 Pa·s
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOUNDARY CONDITIONS -->
+        <section class="case-section">
+
+            <div class="section-heading">
+                <p>03</p>
+                <h2>Boundary Conditions</h2>
+            </div>
+
+
+            <div class="conditions-grid">
+
+                <div>
+                    <p class="eyebrow">01</p>
+                    <h3>Uniform</h3>
+
+                    <p>
+                        Steady uniform inlet velocity used to establish
+                        baseline flow behaviour.
+                    </p>
+                </div>
+
+
+                <div>
+                    <p class="eyebrow">02</p>
+                    <h3>Parabolic</h3>
+
+                    <p>
+                        Fully developed parabolic inlet profile implemented
+                        using a compiled User Defined Function.
+                    </p>
+                </div>
+
+
+                <div>
+                    <p class="eyebrow">03</p>
+                    <h3>Pulsatile</h3>
+
+                    <p>
+                        Transient physiological inlet waveform implemented
+                        using a Fourier-series-based UDF.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+        <section class="case-section">
+
+            <div class="section-heading">
+                <p>04</p>
+                <h2>Results</h2>
+            </div>
+
+
+            <div class="result">
+
+                <p class="eyebrow">Velocity & Recirculation</p>
+
+                <h3>
+                    Central jet formation and aneurysmal recirculation
+                </h3>
+
+                <p>
+                    A high-velocity central jet developed through the
+                    aneurysm while lower-velocity recirculating regions
+                    formed within the enlarged aneurysm sac.
+                </p>
+
+                <!-- We'll put your ANSYS image here later -->
+
+            </div>
+
+
+            <div class="result">
+
+                <p class="eyebrow">Transient Flow</p>
+
+                <h3>
+                    Time-dependent vortex structures
+                </h3>
+
+                <p>
+                    Under pulsatile inlet conditions, vortex structures
+                    continuously developed and changed throughout the
+                    cardiac cycle.
+                </p>
+
+                <!-- We'll put your ANSYS image here later -->
+
+            </div>
+
+
+            <div class="result">
+
+                <p class="eyebrow">Wall Shear Stress</p>
+
+                <h3>
+                    Low and reversed wall shear stress
+                </h3>
+
+                <p>
+                    Regions of low and reversed wall shear stress occurred
+                    within the aneurysm bulge as a result of flow separation
+                    and near-wall recirculation.
+                </p>
+
+                <!-- We'll put your ANSYS image here later -->
+
+            </div>
+
+        </section>
+
+
+        <!-- KEY FINDING -->
+        <section class="case-section key-finding">
+
+            <p class="eyebrow">
+                Key Finding
+            </p>
+
+            <h2>
+                The transient periodic simulation provided the most
+                physiologically realistic representation of flow behaviour
+                within the aneurysm geometry.
+            </h2>
+
+        </section>
+
+
+        <!-- PROJECT LINKS -->
+        <section class="case-links">
+
+            <a href="../index.html#projects" class="text-link">
+                ← All Projects
+            </a>
+
+            <!-- We'll connect this to your PDF shortly -->
+            <a href="#" class="text-link">
+                View Full Technical Report ↗
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Ross Wilgar</p>
+        <p>Biomedical Engineering</p>
+    </footer>
+
+</body>
+
+</html>
