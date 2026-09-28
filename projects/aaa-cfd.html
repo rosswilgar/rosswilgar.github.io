@@ -48,13 +48,22 @@
             </p>
 
             <div class="tags">
-                <span>ANSYS Fluent</span>
-                <span>CFD</span>
-                <span>Haemodynamics</span>
-                <span>UDF</span>
-            </div>
+    <span>ANSYS Fluent</span>
+    <span>CFD</span>
+    <span>Haemodynamics</span>
+</div>
 
-        </section>
+<figure class="case-hero-image">
+    <img
+        src="../images/aaa-cfd/aaa-velocity.png"
+        alt="ANSYS Fluent velocity contour through an idealised abdominal aortic aneurysm">
+
+    <figcaption>
+        FIG. 01 — Velocity magnitude through the idealised AAA geometry.
+    </figcaption>
+</figure>
+
+</section>
 
 
         <!-- OVERVIEW -->
@@ -164,27 +173,36 @@
 
 
                 <div>
-                    <p class="eyebrow">02</p>
-                    <h3>Parabolic</h3>
+    <p class="eyebrow">02</p>
+    <h3>Parabolic</h3>
 
-                    <p>
-                        Fully developed parabolic inlet profile implemented
-                        using a compiled User Defined Function.
-                    </p>
-                </div>
+    <p>
+        Fully developed parabolic inlet profile implemented
+        using a compiled User Defined Function.
+    </p>
+
+    <img
+        class="condition-image"
+        src="../images/aaa-cfd/parabolic-inlet.png"
+        alt="Parabolic velocity profile at the aneurysm inlet">
+</div>
 
 
-                <div>
-                    <p class="eyebrow">03</p>
-                    <h3>Pulsatile</h3>
+               <div>
+    <p class="eyebrow">03</p>
+    <h3>Pulsatile</h3>
 
-                    <p>
-                        Transient physiological inlet waveform implemented
-                        using a Fourier-series-based UDF.
-                    </p>
-                </div>
+    <p>
+        A time-dependent inlet velocity waveform was implemented
+        using a Fourier-series-based UDF to represent pulsatile
+        flow over the cardiac cycle.
+    </p>
 
-            </div>
+    <img
+        class="condition-image"
+        src="../images/aaa-cfd/transient-velocity-profile.png"
+        alt="Transient inlet velocity waveform over the cardiac cycle">
+</div>
 
         </section>
 
@@ -212,7 +230,16 @@
                     formed within the enlarged aneurysm sac.
                 </p>
 
-                <!-- We'll put your ANSYS image here later -->
+                <figure class="case-image">
+    <img
+        src="../images/aaa-cfd/recirculation.png"
+        alt="Velocity vectors showing recirculation within the abdominal aortic aneurysm">
+
+    <figcaption>
+        FIG. 02 — Velocity vectors showing recirculating flow
+        within the aneurysm.
+    </figcaption>
+</figure>
 
             </div>
 
@@ -231,8 +258,55 @@
                     cardiac cycle.
                 </p>
 
-                <!-- We'll put your ANSYS image here later -->
+               <div class="image-comparison">
 
+    <figure class="case-image">
+        <img
+            src="../images/aaa-cfd/transient-low.png"
+            alt="Velocity vectors during the low-flow phase">
+
+        <figcaption>
+            FIG. 03A — Low-flow phase
+        </figcaption>
+    </figure>
+
+    <figure class="case-image">
+        <img
+            src="../images/aaa-cfd/transient-peak.png"
+            alt="Velocity vectors during peak systolic flow">
+
+        <figcaption>
+            FIG. 03B — Peak systolic flow
+        </figcaption>
+    </figure>
+
+</div>
+<div class="result">
+
+    <p class="eyebrow">Local Velocity Analysis</p>
+
+    <h3>
+        Velocity variation throughout the cardiac cycle
+    </h3>
+
+    <p>
+        Local velocity was monitored at selected locations throughout
+        the model to investigate how the pulsatile inlet condition
+        influenced flow behaviour over successive cardiac cycles.
+    </p>
+
+    <figure class="case-image">
+        <img
+            src="../images/aaa-cfd/transient-velocities-plot.png"
+            alt="Plot of local velocity against flow time at selected locations within the AAA model">
+
+        <figcaption>
+            FIG. 04 — Local velocity histories at selected locations
+            within the AAA model under transient flow conditions.
+        </figcaption>
+    </figure>
+
+</div>
             </div>
 
 
@@ -250,7 +324,16 @@
                     and near-wall recirculation.
                 </p>
 
-                <!-- We'll put your ANSYS image here later -->
+                <figure class="case-image">
+    <img
+        src="../images/aaa-cfd/wall-shear-stress.png"
+        alt="Wall shear stress distribution within the abdominal aortic aneurysm">
+
+    <figcaption>
+        FIG. 04 — Wall shear stress distribution within the
+        aneurysm under transient flow conditions.
+    </figcaption>
+</figure>
 
             </div>
 
