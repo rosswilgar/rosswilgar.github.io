@@ -1111,3 +1111,15 @@ footer {
         max-height: 460px;
     }
 }
+/* ECG project — matching schematic figure captions */
+
+.ecg-schematic-figure figcaption,
+.ecg-schematic-values-figure figcaption {
+    margin-top: 8px;
+    color: var(--muted);
+    font-family: monospace;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+}
