@@ -395,6 +395,143 @@
 
     </section>
 
+<!-- ECG ACQUISITION RESULTS -->
+
+<section class="case-section">
+
+    <div class="section-heading">
+        <p>Experimental Recordings</p>
+        <h2>ECG Acquisition Under Different Conditions</h2>
+    </div>
+
+    <div class="case-text">
+
+        <p>
+            Following validation of the analogue circuit,
+            ECG recordings were collected under three
+            different conditions to investigate the
+            effect of interference on signal quality.
+            The raw recordings are shown below before
+            any additional digital filtering.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- RAW NORMAL ECG -->
+
+<section class="case-visual">
+
+    <div class="visual-intro">
+
+        <p class="eyebrow">Normal Recording</p>
+
+        <h2>Baseline ECG acquisition</h2>
+
+        <p>
+            The initial recording showed repeating cardiac
+            activity with identifiable QRS complexes,
+            demonstrating that the circuit could acquire
+            a physiological ECG signal. Some baseline
+            variation and electrical noise remained present.
+        </p>
+
+    </div>
+
+    <figure class="feature-figure">
+
+        <img
+            src="../images/ecg-circuit/raw-normal-ecg.png"
+            alt="Raw ECG waveform recorded under normal conditions"
+            loading="lazy">
+
+        <figcaption>
+            FIG. 04 — Raw ECG acquisition under normal
+            recording conditions, before digital filtering.
+        </figcaption>
+
+    </figure>
+
+</section>
+
+
+<!-- MAINS INTERFERENCE ECG -->
+
+<section class="case-visual">
+
+    <div class="visual-intro">
+
+        <p class="eyebrow">Electrical Interference</p>
+
+        <h2>ECG affected by mains interference</h2>
+
+        <p>
+            A second recording was collected while
+            deliberately introducing electrical
+            interference. Comparing this waveform
+            with the normal recording helped investigate
+            how environmental noise can affect
+            low-amplitude physiological measurements.
+        </p>
+
+    </div>
+
+    <figure class="feature-figure">
+
+        <img
+            src="../images/ecg-circuit/raw-mains-ecg.png"
+            alt="Raw ECG waveform affected by electrical interference"
+            loading="lazy">
+
+        <figcaption>
+            FIG. 05 — Raw ECG recording with deliberately
+            introduced electrical interference.
+        </figcaption>
+
+    </figure>
+
+</section>
+
+
+<!-- ELECTRODE MOTION ECG -->
+
+<section class="case-visual">
+
+    <div class="visual-intro">
+
+        <p class="eyebrow">Movement Artefact</p>
+
+        <h2>ECG affected by electrode movement</h2>
+
+        <p>
+            The third recording investigated the effect
+            of disturbing an electrode during acquisition.
+            Electrode movement introduced irregular
+            fluctuations and baseline changes,
+            illustrating another practical challenge
+            in physiological signal measurement.
+        </p>
+
+    </div>
+
+    <figure class="feature-figure">
+
+        <img
+            src="../images/ecg-circuit/raw-motion-ecg.png"
+            alt="Raw ECG waveform affected by electrode movement"
+            loading="lazy">
+
+        <figcaption>
+            FIG. 06 — Raw ECG recording showing the
+            effects of electrode movement.
+        </figcaption>
+
+    </figure>
+
+</section>
+
 
     <!-- 06 / MATLAB ANALYSIS -->
 
@@ -558,40 +695,35 @@
     <section class="case-section">
 
         <div class="section-heading">
-            <p>Key Finding</p>
             <h2>What I Took From This Project</h2>
         </div>
 
         <div class="case-text">
 
             <p>
-                The most valuable part of this project was
-                progressing from theoretical circuit calculations
+                The most valuable takeaway I had from this pet project was trying the
+                progression from theoretical circuit calculations
                 to a physical build, controlled experimental
                 testing and finally the acquisition of a
-                real physiological signal.
-            </p>
-
-            <p>
-                Although the design calculations provided a
+                real physiological signal. Although the design calculations provided a
                 starting point, measured component tolerances,
                 electrical interference and electrode behaviour
                 meant that the real system did not behave
-                exactly as an ideal schematic would predict.
+                exactly as an ideal schematic would predict which was fine, I knew it would be a 
+                little hard to get perfection with the components I had at hand.
             </p>
 
             <p>
-                Working through these differences reinforced
-                the importance of progressively validating
-                an engineering system against known inputs
+                Working through these differences though definitely emphasised
+                the importance of how useful it was to build a system modularly,
+                with step by step progression & validating my system against known inputs
                 before relying on its final measurements.
             </p>
 
             <p>
-                This project gave me practical experience
-                across analogue electronics, experimental
-                testing, troubleshooting and physiological
-                signal analysis.
+                I didn't have time to go through and refine my circuit or buy new compnents to 
+                try get a higher level of accuracy but this would definitely be a project I would love to come back 
+                to and build on, perhaps integrating further systems after I have aquired my heart rate over a set period of time. 
             </p>
 
         </div>
