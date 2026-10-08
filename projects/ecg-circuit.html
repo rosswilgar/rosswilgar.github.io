@@ -73,8 +73,8 @@
             </p>
 
             <p>
-                This project involved designing and constructing
-                a three-electrode ECG acquisition circuit combining
+                This project involved my design and construction
+                of a three-electrode ECG acquisition circuit, combining
                 instrumentation amplification with active band-pass
                 filtering. The system was designed to provide an
                 overall gain of 625 V/V across a target frequency
@@ -83,8 +83,8 @@
 
             <p>
                 Rather than immediately attempting physiological
-                measurements, the circuit was progressively validated
-                using known input signals. Following bench testing,
+                measurements, I progressively validated the circuit
+                using known input signals. Following component value bench testing,
                 the completed system was used to record cardiac
                 activity, with the resulting data subsequently
                 analysed and processed in MATLAB.
@@ -120,7 +120,7 @@
                 <h3>Acquiring a differential signal</h3>
 
                 <p>
-                    The first stage used an instrumentation-amplifier
+                    The first circuit stage used an instrumentation-amplifier
                     configuration to amplify the small differential
                     voltage measured between the ECG electrodes.
                     Common-mode rejection was important for reducing
@@ -167,12 +167,6 @@
                 Calculated upper cutoff: 108.2 Hz
             </p>
 
-            <p>
-                The differences between nominal and measured
-                component values highlighted the importance of
-                accounting for physical tolerances when comparing
-                theoretical circuit behaviour with experimental results.
-            </p>
 
         </div>
 
@@ -190,12 +184,9 @@
             <h2>From circuit design to physical implementation</h2>
 
             <p>
-                The ECG acquisition circuit was assembled on a
+                I assembled my ECG acquisition circuit on a simple
                 breadboard using discrete components and operational
-                amplifier stages. Testing was carried out
-                progressively to investigate the behaviour of the
-                physical circuit before attempting to acquire
-                physiological signals.
+                amplifier stages. 
             </p>
 
         </div>
@@ -232,8 +223,7 @@
 
             <p>
                 The completed circuit was tested using controlled
-                differential input signals before being connected
-                to ECG electrodes. This allowed the amplification
+                differential input signals, allowing the amplification
                 and filtering behaviour to be assessed independently
                 of the additional uncertainty introduced by
                 physiological measurements.
@@ -273,39 +263,6 @@
 
     </section>
 
-    <section class="case-visual">
-
-        <div class="visual-intro">
-
-            <p class="eyebrow">Experimental Validation</p>
-
-            <h2>Characterising the physical circuit</h2>
-
-            <p>
-                Laboratory power supplies and measurement
-                equipment were used during the controlled
-                testing stage to investigate the circuit's
-                response before physiological acquisition.
-            </p>
-
-        </div>
-
-        <figure class="feature-figure">
-
-            <img
-                src="../images/ecg-circuit/bench-testing.jpg"
-                alt="Laboratory equipment used during ECG circuit testing"
-                loading="lazy">
-
-            <figcaption>
-                FIG. 02 — Laboratory test equipment used during
-                experimental circuit validation.
-            </figcaption>
-
-        </figure>
-
-    </section>
-
 
     <!-- 04 / ECG ACQUISITION -->
 
@@ -321,7 +278,7 @@
             <h3>From test signals to a physiological recording</h3>
 
             <p>
-                Following bench validation, the circuit was
+                Following my bench validation, the circuit was
                 powered using two 9 V batteries to isolate
                 the acquisition circuit from the mains supply
                 during physiological measurements.
@@ -346,24 +303,6 @@
 
     </section>
 
-    <section class="case-visual">
-
-        <div class="visual-intro">
-
-            <p class="eyebrow">Physiological Measurement</p>
-
-            <h2>Recording a real ECG</h2>
-
-            <p>
-                After validating the circuit with known inputs,
-                the system was connected to surface electrodes
-                and used to acquire a cardiac recording.
-                The measurement setup included the breadboard
-                circuit, data acquisition hardware and
-                a computer for viewing the signal.
-            </p>
-
-        </div>
 
         <figure class="feature-figure">
 
@@ -430,9 +369,8 @@
 
                 <p>
                     Deliberate exposure to a nearby mains
-                    source introduced additional interference
-                    into the acquired waveform, allowing
-                    its frequency content to be investigated.
+                    source introduced additional 50Hz noise interference
+                    into the acquired waveform.
                 </p>
 
             </div>
@@ -445,7 +383,7 @@
 
                 <p>
                     Mechanical disturbance of an electrode
-                    produced irregular fluctuations and
+                    produced irregular low frequency fluctuations and
                     baseline changes, demonstrating the
                     sensitivity of the electrode-skin
                     interface during physiological measurement.
@@ -511,25 +449,6 @@
         </div>
 
     </section>
-
-    <section class="case-visual">
-
-        <div class="visual-intro">
-
-            <p class="eyebrow">Processed ECG</p>
-
-            <h2>ECG after 50 Hz notch filtering</h2>
-
-            <p>
-                The filtered recording retains the repeating
-                cardiac waveform while attenuating the
-                identified mains-frequency component.
-                Other disturbances, including baseline
-                variation and movement-related artefacts,
-                remain visible.
-            </p>
-
-        </div>
 
         <figure class="feature-figure">
 
