@@ -1,0 +1,749 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analogue ECG Acquisition | Ross Wilgar</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="../index.html">RW</a>
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#skills">Skills</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- PROJECT INTRODUCTION -->
+
+    <section class="case-hero">
+
+        <p class="eyebrow">02 / Biomedical Electronics</p>
+
+        <h1>Analogue ECG Acquisition &amp; Signal Conditioning</h1>
+
+        <p class="case-intro">
+            Design, construction and experimental validation of a
+            three-electrode analogue ECG acquisition circuit,
+            followed by MATLAB analysis of recorded cardiac signals.
+        </p>
+
+        <div class="tags">
+            <span>Analogue Electronics</span>
+            <span>ECG</span>
+            <span>Signal Conditioning</span>
+            <span>MATLAB</span>
+            <span>Experimental Testing</span>
+        </div>
+
+    </section>
+
+
+    <!-- 01 / OVERVIEW -->
+
+    <section class="case-section">
+
+        <div class="section-heading">
+            <p>01</p>
+            <h2>Overview</h2>
+        </div>
+
+        <div class="case-text">
+
+            <h3>
+                How can low-amplitude cardiac electrical activity
+                be acquired and conditioned using analogue circuitry?
+            </h3>
+
+            <p>
+                Electrocardiogram (ECG) signals measured at the skin
+                are typically only a few millivolts in amplitude,
+                making them susceptible to electrical interference,
+                baseline drift and electrode-motion artefacts.
+            </p>
+
+            <p>
+                This project involved my design and construction
+                of a three-electrode ECG acquisition circuit, combining
+                instrumentation amplification with active band-pass
+                filtering. The system was designed to provide an
+                overall gain of 625 V/V across a target frequency
+                range of 0.5–100 Hz.
+            </p>
+
+            <p>
+                Rather than immediately attempting physiological
+                measurements, I progressively validated the circuit
+                using known input signals. Following component value bench testing,
+                the completed system was used to record cardiac
+                activity, with the resulting data subsequently
+                analysed and processed in MATLAB.
+            </p>
+
+            <p class="technical-values">
+                Design gain: 625 V/V<br>
+                Target passband: 0.5–100 Hz<br>
+                Measured mid-band gain: 640.7 V/V<br>
+                ECG sampling frequency: 400 Hz
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- 02 / ENGINEERING APPROACH -->
+
+    <section class="case-section">
+
+        <div class="section-heading">
+            <p>02</p>
+            <h2>Engineering Approach</h2>
+        </div>
+
+        <div class="case-grid">
+
+            <div>
+
+                <p class="eyebrow">Instrumentation Amplification</p>
+
+                <h3>Acquiring a differential signal</h3>
+
+                <p>
+                    The first circuit stage used an instrumentation-amplifier
+                    configuration to amplify the small differential
+                    voltage measured between the ECG electrodes.
+                    Common-mode rejection was important for reducing
+                    unwanted electrical interference present at
+                    both inputs.
+                </p>
+
+            </div>
+
+            <div>
+
+                <p class="eyebrow">Signal Conditioning</p>
+
+                <h3>Amplification &amp; filtering</h3>
+
+                <p>
+                    A subsequent active filtering stage provided
+                    additional amplification while restricting
+                    the frequency range of the acquired signal.
+                    The intended passband was approximately
+                    0.5–100 Hz.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="case-text">
+
+            <h3>Accounting for physical component tolerances</h3>
+
+            <p>
+                Before experimental validation, the resistor and
+                capacitor values were measured rather than assumed
+                to equal their nominal ratings. These measurements
+                were used to recalculate the expected performance
+                of the constructed circuit.
+            </p>
+
+            <p class="technical-values">
+                Nominal design gain: 625 V/V<br>
+                Predicted gain from measured components: 673.2 V/V<br>
+                Calculated lower cutoff: 0.489 Hz<br>
+                Calculated upper cutoff: 108.2 Hz
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CIRCUIT CONSTRUCTION -->
+
+    <section class="case-visual">
+
+        <div class="visual-intro">
+
+            <p class="eyebrow">Circuit Construction</p>
+
+            <h2>From circuit design to physical implementation</h2>
+
+            <p>
+                I assembled my ECG acquisition circuit on a simple
+                breadboard using discrete components and operational
+                amplifier stages. 
+            </p>
+
+        </div>
+
+        <figure class="feature-figure">
+
+            <img
+                src="../images/ecg-circuit/circuit-breadboard.jpg"
+                alt="Physical breadboard implementation of the analogue ECG circuit"
+                loading="lazy">
+
+            <figcaption>
+                FIG. 01 — Breadboard implementation of the
+                ECG amplification and signal-conditioning circuit.
+            </figcaption>
+
+        </figure>
+
+    </section>
+
+
+    <!-- 03 / BENCH VALIDATION -->
+
+    <section class="case-section">
+
+        <div class="section-heading">
+            <p>03</p>
+            <h2>Bench Validation</h2>
+        </div>
+
+        <div class="case-text">
+
+            <h3>Testing against known input signals</h3>
+
+            <p>
+                The completed circuit was tested using controlled
+                differential input signals, allowing the amplification
+                and filtering behaviour to be assessed independently
+                of the additional uncertainty introduced by
+                physiological measurements.
+            </p>
+
+            <p>
+                Tests were carried out at 0.5 Hz, 1.1 Hz and
+                100 Hz to investigate the circuit response near
+                its lower cutoff, within the passband and near
+                its upper cutoff.
+            </p>
+
+            <p class="technical-values">
+                0.5 Hz — Measured gain: 489.0 V/V<br>
+                1.1 Hz — Measured gain: 640.7 V/V<br>
+                100 Hz — Measured gain: 511.0 V/V
+            </p>
+
+            <p>
+                The highest measured amplification occurred at
+                1.1 Hz, reaching 640.7 V/V. The response decreased
+                towards both cutoff regions, consistent with the
+                intended band-pass behaviour.
+            </p>
+
+            <p>
+                Comparing the original 625 V/V design target,
+                the 673.2 V/V prediction based on measured
+                components and the experimentally observed
+                640.7 V/V mid-band gain provided a useful
+                illustration of the differences between nominal
+                design, calculated physical behaviour and
+                experimental performance.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- 04 / ECG ACQUISITION -->
+
+    <section class="case-section">
+
+        <div class="section-heading">
+            <p>04</p>
+            <h2>ECG Acquisition</h2>
+        </div>
+
+        <div class="case-text">
+
+            <h3>From test signals to a physiological recording</h3>
+
+            <p>
+                Following my bench validation, the circuit was
+                powered using two 9 V batteries to isolate
+                the acquisition circuit from the mains supply
+                during physiological measurements.
+            </p>
+
+            <p>
+                Three disposable ECG electrodes were positioned
+                in an approximate Lead-II configuration.
+                The conditioned signal was acquired using
+                a data acquisition system at a sampling
+                frequency of 400 Hz.
+            </p>
+
+            <p>
+                The resulting waveform contained repeating,
+                identifiable QRS complexes, demonstrating
+                that the constructed circuit could acquire
+                and amplify cardiac electrical activity.
+            </p>
+
+        </div>
+
+    </section>
+
+
+        <figure class="feature-figure">
+
+            <img
+                src="../images/ecg-circuit/ecg-recording.jpg"
+                alt="ECG recording experiment showing the circuit and acquired signal"
+                loading="lazy">
+
+            <figcaption>
+                FIG. 03 — Experimental setup used to record
+                a physiological ECG signal.
+            </figcaption>
+
+        </figure>
+
+
+    <!-- 05 / INTERFERENCE INVESTIGATION -->
+
+    <section class="case-section">
+
+        <div class="section-heading">
+            <p>05</p>
+            <h2>Investigating Signal Interference</h2>
+        </div>
+
+        <div class="case-text">
+
+            <h3>How does the acquired ECG respond to disturbance?</h3>
+
+            <p>
+                Once a normal ECG had been acquired, additional
+                recordings were taken under deliberately
+                disturbed conditions. These experiments were
+                intended to investigate how common sources
+                of interference affected the acquired signal.
+            </p>
+
+        </div>
+
+        <div class="case-grid">
+
+            <div>
+
+                <p class="eyebrow">Normal Recording</p>
+
+                <h3>Baseline measurement</h3>
+
+                <p>
+                    The normal recording contained periodic
+                    cardiac activity with identifiable QRS
+                    complexes, alongside some baseline variation
+                    and electrical noise.
+                </p>
+
+            </div>
+
+            <div>
+
+                <p class="eyebrow">Mains Interference</p>
+
+                <h3>Electrical contamination</h3>
+
+                <p>
+                    Deliberate exposure to a nearby mains
+                    source introduced additional 50Hz noise interference
+                    into the acquired waveform.
+                </p>
+
+            </div>
+
+            <div>
+
+                <p class="eyebrow">Electrode Motion</p>
+
+                <h3>Movement artefacts</h3>
+
+                <p>
+                    Mechanical disturbance of an electrode
+                    produced irregular low frequency fluctuations and
+                    baseline changes, demonstrating the
+                    sensitivity of the electrode-skin
+                    interface during physiological measurement.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- ECG ACQUISITION RESULTS -->
+
+<section class="case-section">
+
+    <div class="section-heading">
+        <p></p>
+        <h2>ECG Acquisition Under Different Conditions</h2>
+    </div>
+
+    <div class="case-text">
+
+        <p>
+            Following validation of the analogue circuit,
+            ECG recordings were collected under three
+            different conditions to investigate the
+            effect of interference on signal quality.
+            The raw recordings are shown below before
+            any additional digital filtering.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- RAW NORMAL ECG -->
+
+<section class="case-visual">
+
+    <div class="visual-intro">
+
+        <p class="eyebrow">Normal Recording</p>
+
+        <h2>Baseline ECG acquisition</h2>
+
+        <p>
+            The initial recording showed repeating cardiac
+            activity with identifiable QRS complexes,
+            demonstrating that the circuit could acquire
+            a physiological ECG signal. Some baseline
+            variation and electrical noise remained present.
+        </p>
+
+    </div>
+
+    <figure class="feature-figure">
+
+        <img
+            src="../images/ecg-circuit/raw-normal-ecg.png"
+            alt="Raw ECG waveform recorded under normal conditions"
+            loading="lazy">
+
+        <figcaption>
+            FIG. 04 — Raw ECG acquisition under normal
+            recording conditions, before digital filtering.
+        </figcaption>
+
+    </figure>
+
+</section>
+
+
+<!-- MAINS INTERFERENCE ECG -->
+
+<section class="case-visual">
+
+    <div class="visual-intro">
+
+        <p class="eyebrow">Electrical Interference</p>
+
+        <h2>ECG affected by mains interference</h2>
+
+        <p>
+            A second recording was collected while
+            deliberately introducing electrical
+            interference. Comparing this waveform
+            with the normal recording helped investigate
+            how environmental noise can affect
+            low-amplitude physiological measurements.
+        </p>
+
+    </div>
+
+    <figure class="feature-figure">
+
+        <img
+            src="../images/ecg-circuit/raw-mains-ecg.png"
+            alt="Raw ECG waveform affected by electrical interference"
+            loading="lazy">
+
+        <figcaption>
+            FIG. 05 — Raw ECG recording with deliberately
+            introduced electrical interference.
+        </figcaption>
+
+    </figure>
+
+</section>
+
+
+<!-- ELECTRODE MOTION ECG -->
+
+<section class="case-visual">
+
+    <div class="visual-intro">
+
+        <p class="eyebrow">Movement Artefact</p>
+
+        <h2>ECG affected by electrode movement</h2>
+
+        <p>
+            The third recording investigated the effect
+            of disturbing an electrode during acquisition.
+            Electrode movement introduced irregular
+            fluctuations and baseline changes,
+            illustrating another practical challenge
+            in physiological signal measurement.
+        </p>
+
+    </div>
+
+    <figure class="feature-figure">
+
+        <img
+            src="../images/ecg-circuit/raw-motion-ecg.png"
+            alt="Raw ECG waveform affected by electrode movement"
+            loading="lazy">
+
+        <figcaption>
+            FIG. 06 — Raw ECG recording showing the
+            effects of electrode movement.
+        </figcaption>
+
+    </figure>
+
+</section>
+
+
+    <!-- 06 / MATLAB ANALYSIS -->
+
+    <section class="case-section">
+
+        <div class="section-heading">
+            <p>06</p>
+            <h2>MATLAB Signal Analysis &amp; Cleaning</h2>
+        </div>
+
+        <div class="case-text">
+
+            <h3>Investigating noise in the frequency domain</h3>
+
+            <p>
+                The acquired ECG recordings were imported
+                into MATLAB for further analysis. A Fast
+                Fourier Transform (FFT) was used to examine
+                the frequency content of the recordings
+                and investigate the interference observed
+                during experimental testing.
+            </p>
+
+            <p>
+                A component around 50 Hz was identified,
+                consistent with electrical mains interference.
+                Electrode movement also introduced substantial
+                disturbance that was not confined to a
+                single frequency.
+            </p>
+
+            <h3>Digital notch filtering</h3>
+
+            <p>
+                A 50 Hz IIR notch filter was implemented
+                in MATLAB to attenuate mains interference.
+                Zero-phase forward-backward filtering was
+                used to avoid introducing phase distortion
+                into the ECG waveform.
+            </p>
+
+            <p>
+                Following filtering, the repeating QRS
+                complexes remained clearly identifiable.
+                This provided a useful demonstration of
+                how analogue signal conditioning and
+                subsequent digital processing can be
+                combined when working with low-amplitude
+                physiological signals.
+            </p>
+
+        </div>
+
+    </section>
+
+        <figure class="feature-figure">
+
+            <img
+                src="../images/ecg-circuit/cleaned-ecg.png"
+                alt="MATLAB plot of ECG recording following 50 Hz notch filtering"
+                loading="lazy">
+
+            <figcaption>
+                FIG. 07 — Cleaned ECG recording following
+                50 Hz notch filtering in MATLAB.
+            </figcaption>
+
+        </figure>
+
+
+    <!-- 07 / RESULTS -->
+
+    <section class="case-section">
+
+        <div class="section-heading">
+            <p>07</p>
+            <h2>Results &amp; Engineering Takeaways</h2>
+        </div>
+
+        <div class="case-text">
+
+            <h3>Outcome</h3>
+
+            <p>
+                The completed analogue circuit successfully
+                acquired a recognisable ECG waveform after
+                first demonstrating the intended amplification
+                and filtering behaviour under controlled
+                bench testing.
+            </p>
+
+            <p>
+                The project also demonstrated the practical
+                challenges involved in measuring physiological
+                signals, including component tolerances,
+                environmental electrical interference and
+                electrode movement.
+            </p>
+
+        </div>
+
+        <div class="case-grid">
+
+            <div>
+
+                <p class="eyebrow">01 / Design vs Reality</p>
+
+                <h3>Physical components are not ideal</h3>
+
+                <p>
+                    Measured component values produced a
+                    different predicted gain from the
+                    original nominal design, reinforcing
+                    the importance of characterising
+                    physical components.
+                </p>
+
+            </div>
+
+            <div>
+
+                <p class="eyebrow">02 / Experimental Validation</p>
+
+                <h3>Test before interpreting</h3>
+
+                <p>
+                    Testing the circuit with known signals
+                    made it possible to evaluate its
+                    behaviour before introducing the
+                    additional uncertainty associated
+                    with physiological measurements.
+                </p>
+
+            </div>
+
+            <div>
+
+                <p class="eyebrow">03 / Biomedical Measurement</p>
+
+                <h3>Real signals are rarely ideal</h3>
+
+                <p>
+                    Electrical interference and electrode
+                    movement affected the acquired ECG,
+                    demonstrating why careful measurement
+                    setup and signal conditioning are
+                    essential in biomedical instrumentation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- KEY FINDING -->
+
+    <section class="case-section">
+
+        <div class="section-heading">
+            <p></p>
+            <h2>What I Took From This Project</h2>
+        </div>
+
+        <div class="case-text">
+
+            <p>
+                The most valuable takeaway I had from this pet project was trying the
+                progression from theoretical circuit calculations
+                to a physical build, controlled experimental
+                testing and finally the acquisition of a
+                real physiological signal. Although the design calculations provided a
+                starting point, measured component tolerances,
+                electrical interference and electrode behaviour
+                meant that the real system did not behave
+                exactly as an ideal schematic would predict which was fine, I knew it would be a 
+                little hard to get perfection with the components I had at hand.
+            </p>
+
+            <p>
+                Working through these differences though definitely emphasised
+                the importance of how useful it was to build a system modularly,
+                with step by step progression & validating my system against known inputs
+                before relying on its final measurements.
+            </p>
+
+            <p>
+                I didn't have time to go through and refine my circuit or buy new compnents to 
+                try get a higher level of accuracy but this would definitely be a project I would love to come back 
+                to and build on, perhaps integrating further systems after I have aquired my heart rate over a set period of time. 
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BACK TO PROJECTS -->
+
+    <section class="case-section">
+
+        <div class="case-text">
+
+            <a href="../index.html#projects" class="text-link">
+                ← Back to Projects
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>
+
